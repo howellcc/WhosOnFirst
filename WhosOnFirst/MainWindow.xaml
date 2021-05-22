@@ -1,0 +1,24 @@
+﻿<Window x:Class="WhosOnFirst.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WhosOnFirst"
+        mc:Ignorable="d"
+        Title="Who's On First" Height="200" Width="400"
+        MouseUp="Grid_MouseUp" KeyDown="Window_KeyDown">
+   <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ShowGridLines="false">
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="*"></ColumnDefinition>
+         <ColumnDefinition Width="Auto"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="*"></RowDefinition>
+         <RowDefinition Height="Auto"></RowDefinition>
+      </Grid.RowDefinitions>
+      <TextBlock x:Name="tbName" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Text="{Binding Path=CurrentTeammate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" ></TextBlock>
+      <Button x:Name="btnReset" Grid.Row="1" Grid.Column="1" Click="btnReset_Click" Margin="0 0 5 5" IsEnabled="False">
+         <TextBlock Text="Reset" Margin="4 0 4 1" ></TextBlock>
+      </Button>
+   </Grid>
+</Window>
