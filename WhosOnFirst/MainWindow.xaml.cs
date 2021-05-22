@@ -122,7 +122,10 @@ namespace WhosOnFirst
          }
          if(e.Key == Key.Enter || e.Key == Key.Return)
          {
-            Reset();
+            if (btnReset.IsEnabled)
+            {
+               Reset();
+            }
          }
          if(e.Key == Key.Escape)
          {
